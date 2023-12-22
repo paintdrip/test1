@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap');
 
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
 /* Стилизация header'а */
 .header {
   display: flex;
@@ -35,7 +39,6 @@
   font-size: 18px;
   color: #27323f;
   font-weight: 600;
-  font-family: 'Open Sans', sans-serif;
   list-style-type: none; /* Убираем маркеры со списка*/
   display: inline-block; /* Строчно-блочный элемент */
   cursor: pointer;
@@ -50,6 +53,8 @@
   cursor: pointer;
 }
 
+/* стилизация верхнего новостного блока */
+
 .newsBlock {
   background-image: url('/assets/images/newsBlock-background.png');
   height: 740px;
@@ -57,6 +62,7 @@
   display: flex;
   /* justify-content: center; */
   align-items: center;
+  margin-bottom: 180px;
 }
 
 .newsBlock__content {
@@ -82,7 +88,6 @@
 .newsBlock__content__titleBlock__text {
   font-weight: 800;
   font-size: 24px;
-  font-family: 'Open Sans', sans-serif;
   color: #ff9138;
   margin: 0;
   height: 33px;
@@ -94,7 +99,6 @@
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 30px;
-  font-family: 'Open Sans', sans-serif;
   color: #002060;
 }
 
@@ -105,7 +109,6 @@
   margin-top: 0;
   margin-bottom: 30px;
   color: #27323f;
-  font-family: 'Open Sans', sans-serif;
   position: relative;
   margin-left: 20px;
 }
@@ -133,7 +136,6 @@
   font-weight: 600;
   font-size: 18px;
   line-height: 24.51px;
-  font-family: 'Open Sans', sans-serif;
   position: relative;
   padding-right: 40px;
   cursor: pointer;
@@ -151,4 +153,99 @@
   background-image: url('/assets/images/arrow-icon.svg');
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+/* стилизация первого блока (Услуги) */
+
+.servicesBlock {
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 180px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.servicesBlock__title {
+  margin: 0;
+  font-size: 96px;
+  line-height: 130.73px;
+  color: #002060;
+  font-weight: 600;
+}
+
+.servicesBlock__container {
+  display: flex;
+  flex-direction: row;
+  gap: 19px;
+}
+
+.servicesBlock__container__leftBlock {
+  height: 574px;
+  width: 574px;
+  background-color: #f8f8f9;
+  border-radius: 8px;
+  display: flex;
+  /* align-items: center; */
+  /* justify-content: center; */
+  flex-direction: column;
+}
+
+.servicesBlock__container__leftBlock__img {
+  height: 210px;
+  width: 210px;
+  margin-top: 100px;
+  margin-left: 182px;
+  margin-bottom: 70px;
+}
+
+.servicesBlock__container__leftBlock__title {
+  margin: 0 0 0 40px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30.6px;
+  color: #27323f;
+}
+
+.servicesBlock__container__leftBlock__description {
+  margin: 20px 0 0 40px;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 25.2px;
+  width: 500px;
+  height: 100px;
+  color: #27323f;
+}
+
+.servicesBlock__container__rightBlock {
+  height: 574px;
+  width: 574px;
+  display: grid;
+  grid-template-columns: repeat(2, 277px);
+  grid-template-rows: repeat(2, 277px);
+  gap: 20px;
+}
+
+.grid-item {
+  background-color: #f8f8f9;
+  width: 277px;
+  height: 277px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.grid-item__img {
+  height: 140px;
+  width: 140px;
+}
+
+.grid-item__title {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30.6px;
+  width: 237px;
 }
