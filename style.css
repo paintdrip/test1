@@ -278,7 +278,7 @@
   font-weight: 600;
 }
 
-.articlesBlock__container {
+.articles__container {
   display: flex;
   flex-direction: column;
 }
@@ -306,32 +306,32 @@
   width: 24px;
 }
 
-.articlesBlock__container__itemblock {
+.item-block {
   display: flex;
   flex-direction: row;
   gap: 60px;
 }
 
-.articlesBlock__container__itemblock__item {
+.item-block__item {
   width: 425px;
   height: 550px;
   background-color: rgb(228, 212, 212);
   position: relative;
 }
 
-.articlesBlock__container__itemblock__item__head {
+.h-head {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 17px;
 }
 
-.articlesBlock__container__itemblock__item__head__img {
+.h-head__img {
   width: 36px;
   height: 36px;
 }
 
-.articlesBlock__container__itemblock__item__head__title {
+.h-head__title {
   color: #27323f;
   font-size: 24px;
   font-style: normal;
@@ -340,7 +340,7 @@
   margin: 0;
 }
 
-.articlesBlock__container__itemblock__item__line {
+.container-line {
   height: 1px;
   width: 425px;
   background-color: #27323f;
@@ -348,7 +348,7 @@
   margin-bottom: 30px;
 }
 
-.articlesBlock__container__itemblock__item__p {
+.item-block__item__p {
   color: #27323f;
   font-size: 28px;
   font-style: normal;
@@ -361,7 +361,7 @@
   bottom: 0;
 }
 
-.articlesBlock__container__itemblock__item__desc {
+.item-block__item__desc {
   color: #27323f;
   font-size: 18px;
   font-style: normal;
@@ -369,7 +369,7 @@
   line-height: 25.2px;
 }
 
-.articlesBlock__container__itemblock__item__btn {
+.item-block__item__btn {
   width: 139px;
   height: 41px;
   border-radius: 40px;
@@ -385,7 +385,7 @@
   cursor: pointer;
 }
 
-.articlesBlock__container__itemblock__item__btn::after {
+.item-block__item__btn::after {
   content: '';
   display: block;
   position: absolute;
