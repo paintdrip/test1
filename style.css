@@ -281,6 +281,7 @@
 .articles__container {
   display: flex;
   flex-direction: column;
+  margin-left: 583px;
 }
 
 .lr-buttons {
@@ -315,7 +316,6 @@
 .item-block__item {
   width: 425px;
   height: 550px;
-  background-color: rgb(228, 212, 212);
   position: relative;
 }
 
