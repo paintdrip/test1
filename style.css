@@ -125,7 +125,7 @@
   border-radius: 30px;
 }
 
-.newsBlock__content__btn {
+.arrow-button {
   width: 139px;
   height: 41px;
   border-radius: 40px;
@@ -141,7 +141,7 @@
   cursor: pointer;
 }
 
-.newsBlock__content__btn::after {
+.arrow-button::after {
   content: '';
   display: block;
   position: absolute;
@@ -157,7 +157,7 @@
 
 /* стилизация первого блока (Услуги) */
 
-.servicesBlock {
+.section {
   margin-left: 80px;
   margin-right: 80px;
   margin-bottom: 180px;
@@ -166,7 +166,7 @@
   justify-content: space-between;
 }
 
-.servicesBlock__title {
+.section-title {
   margin: 0;
   font-size: 96px;
   line-height: 130.73px;
@@ -174,13 +174,13 @@
   font-weight: 600;
 }
 
-.servicesBlock__container {
+.section__container {
   display: flex;
   flex-direction: row;
   gap: 19px;
 }
 
-.servicesBlock__container__leftBlock {
+.section__container__left-block {
   height: 574px;
   width: 574px;
   background-color: #f8f8f9;
@@ -191,7 +191,7 @@
   flex-direction: column;
 }
 
-.servicesBlock__container__leftBlock__img {
+.section__container__left-block__img {
   height: 210px;
   width: 210px;
   margin-top: 100px;
@@ -199,7 +199,7 @@
   margin-bottom: 70px;
 }
 
-.servicesBlock__container__leftBlock__title {
+.section__container__left-block__title {
   margin: 0 0 0 40px;
   font-weight: 600;
   font-size: 18px;
@@ -207,7 +207,7 @@
   color: #27323f;
 }
 
-.servicesBlock__container__leftBlock__description {
+.section__container__left-block__description {
   margin: 20px 0 0 40px;
   font-weight: 300;
   font-size: 18px;
@@ -217,7 +217,7 @@
   color: #27323f;
 }
 
-.servicesBlock__container__rightBlock {
+.section__container__right-block {
   height: 574px;
   width: 574px;
   display: grid;
@@ -242,6 +242,7 @@
   margin-top: 35px;
   height: 140px;
   width: 140px;
+  flex-shrink: 0;
 }
 
 .grid-item__title {
@@ -250,6 +251,7 @@
   font-size: 18px;
   line-height: 30.6px;
   width: 237px;
+  color: #27323f;
 }
 
 /* стилизация второго блока (Статьи) */
@@ -369,14 +371,89 @@
   line-height: 25.2px;
 }
 
-.item-block__item__btn {
-  width: 139px;
+/* стилизация третьего блока (решения) */
+
+.double-grid-section {
+  height: 574px;
+  width: 574px;
+  display: grid;
+  grid-template-columns: repeat(1, 277px);
+  grid-template-rows: repeat(1, 277px);
+  gap: 20px;
+}
+
+.grid-double {
+  background-color: #f8f8f9;
+  width: 574px;
+  height: 277px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  text-align: center;
+}
+
+.grid-double__img {
+  margin-top: 35px;
+  height: 140px;
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.grid-double__title {
+  margin: 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 30.6px;
+  width: 317px;
+  text-align: center;
+  color: #27323f;
+  text-transform: uppercase;
+}
+
+/* стилизация четвертого блока (напишите нам) */
+
+.grey-section {
+  padding-left: 80px;
+  padding-right: 80px;
+  height: 335px;
+  margin-bottom: 180px;
+  display: flex;
+  flex-direction: row;
+  background-color: #f8f8f9;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.grey-section__container {
+  width: 1613px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.write-block {
+  width: 722px;
+}
+
+.write-block__p {
+  align-self: stretch;
+  color: #27323f;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.orange-button {
+  width: 162px;
   height: 41px;
   border-radius: 40px;
-  border: 1px solid #002060;
-  color: #002060;
+  border: 0px solid;
+  color: #fff;
+  background-color: #ff7e25;
   padding: 8px, 20px, 8px, 20px;
-  background-color: transparent;
   font-weight: 600;
   font-size: 18px;
   line-height: 24.51px;
@@ -385,16 +462,60 @@
   cursor: pointer;
 }
 
-.item-block__item__btn::after {
+.orange-button::after {
   content: '';
   display: block;
   position: absolute;
   top: 50%;
-  right: 20px; /* Располагаем стрелочку справа */
+  right: 20px;
   transform: translateY(-50%);
   width: 24px;
   height: 24px;
-  background-image: url('/assets/images/arrow-icon.svg');
+  background-image: url('/assets/images/containers/write-us/arrow.svg');
   background-size: contain;
   background-repeat: no-repeat;
+}
+
+/* стилизация пятого блока (Направления) */
+
+.burger-blocks {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  width: 870px;
+  gap: 60px;
+}
+
+.burger-blocks__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  border-bottom: 1px solid #000;
+  padding-bottom: 20px;
+}
+
+.burger-blocks__item__h4 {
+  margin: 0;
+  color: #27323f;
+  font-size: 28px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.lr-orange-btn {
+  height: 40px;
+  width: 64px;
+  border-radius: 40px;
+  border: 2px solid var(--blue, #ff7e25);
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.lr-orange-btn img {
+  height: 24px;
+  width: 24px;
 }
