@@ -321,6 +321,7 @@
   width: 425px;
   height: 550px;
   position: relative;
+  transition: 0.2s;
 }
 
 .h-head {
