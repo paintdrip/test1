@@ -8,6 +8,7 @@
       type="text/css"
       href="https://necolas.github.io/normalize.css/8.0.1/normalize.css"
     />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <!-- Header сайта -->
@@ -90,15 +91,15 @@
       <div class="articles__up-block">
         <h1 class="section-title">Статьи</h1>
         <div class="lr-buttons">
-          <button class="lr-buttons__btn">
+          <button class="lr-buttons__btn" id="backButton">
             <img src="/assets/images/containers/articles/left.svg" alt="Кнопка прокрутки влево" />
           </button>
-          <button class="lr-buttons__btn">
+          <button class="lr-buttons__btn" id="forwardButton">
             <img src="/assets/images/containers/articles/right.svg" alt="Кнопка прокрутки вправо" />
           </button>
         </div>
       </div>
-      <div class="articles__container">
+      <div class="articles__container" id="contentField">
         <div class="item-block">
           <!-- первый блок -->
           <div class="item-block__item">
