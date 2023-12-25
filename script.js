@@ -1,47 +1,47 @@
 console.log('скрипт запущен');
 
-function updateElementOpacity() {
-  const elements = document.getElementsByClassName('item-block__item');
+window.onload = () => {
+  // устанавливаем настройки
+  const options = {
+    // родитель целевого элемента - область просмотра
+    root: document.querySelector('.articles__container'),
+    // без отступов
+    rootMargin: '0px',
+    // процент пересечения - половина изображения
+    threshold: [0, 1],
+  };
 
-  for (let i = 0; i < elements.length; i++) {
-    const element = elements[i];
-    const isVisible = isElementFullyVisible(element);
+  // создаем наблюдатель
+  const observer = new IntersectionObserver((entries) => {
+    // для каждой записи-целевого элемента
+    entries.forEach((entry) => {
+      const lazyImg = entry.target;
+      // если элемент полностью виден на странице или полностью скрыт за пределами родительского контейнера
+      if (entry.intersectionRatio === 1 || entry.intersectionRatio === 0) {
+        lazyImg.style.opacity = '1'; // делаем элемент непрозрачным
+      } else if (lazyImg.style.opacity !== '0.2') {
+        lazyImg.style.opacity = '0.2'; // делаем элемент прозрачным, если его opacity не равно 0.2
+      }
+    });
+  }, options);
 
-    if (isVisible) {
-      element.style.opacity = '1';
-    } else {
-      element.style.opacity = '0.2';
-    }
-  }
-}
-
-function isElementFullyVisible(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-// Вызов функции при загрузке страницы и при изменении размеров окна
-window.addEventListener('load', updateElementOpacity);
-window.addEventListener('resize', updateElementOpacity);
+  // с помощью цикла следим за всеми img на странице
+  const arr = document.querySelectorAll('.item-block__item');
+  arr.forEach((i) => {
+    observer.observe(i);
+  });
+};
 
 // Слайдер
 const contentField = document.getElementById('contentField');
-contentField.addEventListener('scroll', updateElementOpacity);
 // Функция для прокрутки вперед
-async function scrollForward() {
-  await contentField.scrollBy({ left: 250, behavior: 'smooth' });
-  updateElementOpacity();
+function scrollForward() {
+  contentField.scrollBy({ left: 250, behavior: 'smooth' });
 }
 
 // Функция для прокрутки назад
 async function scrollBack() {
-  await contentField.scrollBy({ left: -250, behavior: 'smooth' });
-  updateElementOpacity();
+  contentField.scrollBy({ left: -250, behavior: 'smooth' });
 }
 
 // Устанавливаем обработчики событий на кнопки
