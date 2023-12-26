@@ -20,12 +20,12 @@
       />
       <nav class="header__nav">
         <ul>
-          <li>Направления</li>
-          <li>Услуги</li>
-          <li>Решения</li>
-          <li>Статьи</li>
-          <li>Карьера</li>
-          <li>О нас</li>
+          <li class="header__nav__li" onclick="showContent(1, this)">Направления</li>
+          <li class="header__nav__li" onclick="showContent(2, this)">Услуги</li>
+          <li class="header__nav__li" onclick="showContent(3, this)">Решения</li>
+          <li class="header__nav__li" onclick="showContent(4, this)">Статьи</li>
+          <li class="header__nav__li" onclick="showContent(5, this)">Карьера</li>
+          <li class="header__nav__li" onclick="showContent(6, this)">О нас</li>
         </ul>
         <img
           id="search-menu__button"
@@ -34,14 +34,67 @@
         />
       </nav>
     </header>
+    <!-- выпадайка directions -->
+    <div id="direction1" class="direction">
+      <div class="direction-container">
+        <img class="direction-img" src="/assets/images/drop-downs/Directions.png" alt="Search" />
+        <ul class="direction-list">
+          <li class="direction-list__li"><p>Бизнес-процессы</p></li>
+          <li class="direction-list__li"><p>Проекты</p></li>
+          <li class="direction-list__li"><p>Изменения</p></li>
+          <li class="direction-list__li"><p>Риски</p></li>
+          <li class="direction-list__li"><p>Управленческий консалтинг</p></li>
+        </ul>
+      </div>
+    </div>
+    <div id="direction2" class="direction">
+      <div class="direction-container">
+        <img class="direction-img" src="/assets/images/drop-downs/Directions.png" alt="Search" />
+        <ul class="direction-list">
+          <li class="direction-list__li"><p>Услуги</p></li>
+        </ul>
+      </div>
+    </div>
+    <div id="direction3" class="direction">
+      <div class="direction-container">
+        <img class="direction-img" src="/assets/images/drop-downs/Directions.png" alt="Search" />
+        <ul class="direction-list">
+          <li class="direction-list__li"><p>Решения</p></li>
+        </ul>
+      </div>
+    </div>
+    <div id="direction4" class="direction">
+      <div class="direction-container">
+        <img class="direction-img" src="/assets/images/drop-downs/Directions.png" alt="Search" />
+        <ul class="direction-list">
+          <li class="direction-list__li"><p>Статьи</p></li>
+        </ul>
+      </div>
+    </div>
+    <div id="direction5" class="direction">
+      <div class="direction-container">
+        <img class="direction-img" src="/assets/images/drop-downs/Directions.png" alt="Search" />
+        <ul class="direction-list">
+          <li class="direction-list__li"><p>Карьера</p></li>
+        </ul>
+      </div>
+    </div>
+    <div id="direction6" class="direction">
+      <div class="direction-container">
+        <img class="direction-img" src="/assets/images/drop-downs/Directions.png" alt="Search" />
+        <ul class="direction-list">
+          <li class="direction-list__li"><p>О нас</p></li>
+        </ul>
+      </div>
+    </div>
+    <!-- <div id="content3" class="content">Содержимое для пункта Решения</div>
+    <div id="content4" class="content">Содержимое для пункта Статьи</div>
+    <div id="content5" class="content">Содержимое для пункта Карьера</div>
+    <div id="content6" class="content">Содержимое для пункта О нас</div> -->
     <!-- выпадайка поиска -->
     <div class="menu" id="search-menu">
       <div class="menu-container">
-        <img
-          class="menu-container__search-img"
-          src="/assets/images/drop-downs/search.png"
-          alt="Search"
-        />
+        <img class="search-img" src="/assets/images/drop-downs/search.png" alt="Search" />
         <div class="input-search-block">
           <input type="text" class="input-search-block__input" placeholder="Поиск по сайту" />
           <button class="input-search-block__button">Найти</button>

@@ -55,6 +55,7 @@ console.log('скрипт закончен');
 
 // появление / скрытие верхнего выпадающего меню
 document.addEventListener('click', function (event) {
+  var pageOverlay = document.createElement('div');
   var menu = document.getElementById('search-menu');
   var menuButton = document.getElementById('search-menu__button');
 
@@ -66,3 +67,44 @@ document.addEventListener('click', function (event) {
     menuButton.classList.remove('open');
   }
 });
+
+// directions
+function showContent(index, element) {
+  // Скрываем все содержимое
+  var contents = document.getElementsByClassName('direction');
+  for (var i = 0; i < contents.length; i++) {
+    contents[i].style.display = 'none';
+  }
+
+  // Удаляем класс "selected" у всех пунктов списка
+  var listItems = document.getElementsByTagName('li');
+  for (var i = 0; i < listItems.length; i++) {
+    listItems[i].classList.remove('selected');
+  }
+
+  // Отображаем содержимое для выбранного пункта
+  var selectedContent = document.getElementById('direction' + index);
+  selectedContent.style.opacity = '1';
+  selectedContent.style.display = 'block';
+
+  // Добавляем класс "selected" к выбранному пункту списка
+  element.classList.add('selected');
+
+  // Закрываем содержимое при клике вне блока
+  function handleClickOutside(event) {
+    if (!selectedContent.contains(event.target) && event.target !== element) {
+      selectedContent.style.opacity = '0';
+      selectedContent.style.display = 'none';
+
+      element.classList.remove('selected');
+    }
+  }
+
+  // Предотвращаем закрытие содержимого при клике внутри блока
+  function handleClickInside(event) {
+    event.stopPropagation();
+  }
+
+  document.addEventListener('click', handleClickOutside);
+  selectedContent.addEventListener('click', handleClickInside);
+}

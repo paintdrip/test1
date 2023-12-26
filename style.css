@@ -15,12 +15,13 @@
   margin-top: 20px;
   margin-bottom: 20px;
   align-items: center;
-  z-index: 1000;
+  z-index: 9999;
 }
 
 .header__img {
   width: 164px;
   height: 50px;
+  user-select: none;
 }
 
 .header__nav {
@@ -37,13 +38,15 @@
   display: flex;
 }
 
-.header__nav li {
+.header__nav__li {
   font-size: 18px;
   color: #27323f;
   font-weight: 600;
   list-style-type: none; /* Убираем маркеры со списка*/
   display: inline-block; /* Строчно-блочный элемент */
   cursor: pointer;
+  user-select: none;
+  transition: 0.2s;
 }
 
 .header__nav__searchIcon {
@@ -54,6 +57,7 @@
   padding: 9.5px;
   cursor: pointer;
   transition: 0.2s;
+  user-select: none;
 }
 
 /* стилизация верхнего новостного блока */
@@ -740,6 +744,16 @@
   transition: 0.3s;
 }
 
+.menu::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: rgba(176, 183, 199, 0.4);
+}
+
 .menu-container {
   display: flex;
   justify-content: space-between;
@@ -750,7 +764,7 @@
   margin-top: 50px;
 }
 
-.menu-container__search-img {
+.search-img {
   width: 345px;
   height: 87px;
   flex-shrink: 0;
@@ -797,7 +811,74 @@
   margin-right: 6px;
 }
 
-.menu::before {
+#search-menu.open {
+  opacity: 1;
+}
+
+#search-menu__button.open {
+  background-color: #ff7e25;
+}
+
+/* directions */
+
+.direction {
+  /* display: none; */
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 355px;
+  background-color: #fff;
+  transition: 0.3s;
+  z-index: 999;
+}
+
+.direction-container {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  /* align-items: center; */
+  margin-left: 80px;
+  margin-right: 152px;
+  margin-top: 50px;
+}
+
+.direction-img {
+  width: 425px;
+  height: 87px;
+  flex-shrink: 0;
+}
+
+.direction-list {
+  width: 660px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 30px;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.direction-list__li {
+  color: #27323f;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+.direction-list__li:hover {
+  color: #ff7e25;
+}
+
+.direction-list__li p {
+  margin: 0;
+}
+
+.direction::before {
   content: '';
   position: absolute;
   top: 0;
@@ -807,10 +888,6 @@
   background: rgba(176, 183, 199, 0.4);
 }
 
-#search-menu.open {
-  opacity: 1;
-}
-
-#search-menu__button.open {
-  background-color: #ff7e25;
+.selected {
+  color: #ff7e25;
 }
