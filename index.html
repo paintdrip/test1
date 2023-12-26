@@ -27,15 +27,26 @@
           <li>Карьера</li>
           <li>О нас</li>
         </ul>
-        <img id="menuButton" class="header__nav__searchIcon" src="/assets/images/search-icon.svg" />
+        <img
+          id="search-menu__button"
+          class="header__nav__searchIcon"
+          src="/assets/images/search-icon.svg"
+        />
       </nav>
     </header>
-    <div id="menu">
-      <ul>
-        <li>Пункт меню 1</li>
-        <li>Пункт меню 2</li>
-        <li>Пункт меню 3</li>
-      </ul>
+    <!-- выпадайка поиска -->
+    <div class="menu" id="search-menu">
+      <div class="menu-container">
+        <img
+          class="menu-container__search-img"
+          src="/assets/images/drop-downs/search.png"
+          alt="Search"
+        />
+        <div class="input-search-block">
+          <input type="text" class="input-search-block__input" placeholder="Поиск по сайту" />
+          <button class="input-search-block__button">Найти</button>
+        </div>
+      </div>
     </div>
     <!-- Верхний блок с последними новостями -->
     <section class="newsBlock">

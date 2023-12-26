@@ -55,12 +55,14 @@ console.log('скрипт закончен');
 
 // появление / скрытие верхнего выпадающего меню
 document.addEventListener('click', function (event) {
-  var menu = document.getElementById('menu');
-  var menuButton = document.getElementById('menuButton');
+  var menu = document.getElementById('search-menu');
+  var menuButton = document.getElementById('search-menu__button');
 
   if (event.target === menuButton) {
     menu.classList.toggle('open');
+    menuButton.classList.toggle('open');
   } else if (!menu.contains(event.target)) {
     menu.classList.remove('open');
+    menuButton.classList.remove('open');
   }
 });
