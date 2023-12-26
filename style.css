@@ -506,6 +506,21 @@
   flex-direction: row;
   border-bottom: 1px solid #000;
   padding-bottom: 20px;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.burger-blocks__item:hover h4 {
+  color: #ff7e25;
+}
+
+.burger-blocks__item:hover button {
+  opacity: 1;
+  border: 2px solid #ff7e25;
+}
+
+.burger-blocks__item:hover button img {
+  filter: none;
 }
 
 .burger-blocks__item__h4 {
@@ -515,22 +530,26 @@
   font-style: normal;
   font-weight: 600;
   line-height: normal;
+  transition: 0.2s;
 }
 
 .lr-orange-btn {
   height: 40px;
   width: 64px;
   border-radius: 40px;
-  border: 2px solid var(--blue, #ff7e25);
+  border: 2px solid #b0b7c7;
   background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0.3;
+  transition: 0.2s;
 }
 
 .lr-orange-btn img {
   height: 24px;
   width: 24px;
+  filter: grayscale(100%);
 }
 
 /* стилизация шестого блока (Принципы) */
