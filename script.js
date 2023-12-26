@@ -1,13 +1,9 @@
-console.log('скрипт запущен');
+// Функционал затемнения слайдера
 
 window.onload = () => {
-  // устанавливаем настройки
   const options = {
-    // родитель целевого элемента - область просмотра
     root: document.querySelector('.articles__container'),
-    // без отступов
     rootMargin: '0px',
-    // процент пересечения - половина изображения
     threshold: [0, 1],
   };
 
@@ -34,6 +30,7 @@ window.onload = () => {
 
 // Слайдер
 const contentField = document.getElementById('contentField');
+
 // Функция для прокрутки вперед
 function scrollForward() {
   contentField.scrollBy({ left: 250, behavior: 'smooth' });
@@ -44,14 +41,11 @@ async function scrollBack() {
   contentField.scrollBy({ left: -250, behavior: 'smooth' });
 }
 
-// Устанавливаем обработчики событий на кнопки
 const forwardButton = document.getElementById('forwardButton');
 forwardButton.addEventListener('click', scrollForward);
 
 const backButton = document.getElementById('backButton');
 backButton.addEventListener('click', scrollBack);
-
-console.log('скрипт закончен');
 
 // появление / скрытие верхнего выпадающего меню
 document.addEventListener('click', function (event) {
@@ -68,15 +62,13 @@ document.addEventListener('click', function (event) {
   }
 });
 
-// directions
+// функционал выпадающих меню directions
 function showContent(index, element) {
-  // Скрываем все содержимое
+  // Скрываем все содержимое и Удаляем класс "selected" у всех пунктов списка
   var contents = document.getElementsByClassName('direction');
   for (var i = 0; i < contents.length; i++) {
     contents[i].style.display = 'none';
   }
-
-  // Удаляем класс "selected" у всех пунктов списка
   var listItems = document.getElementsByTagName('li');
   for (var i = 0; i < listItems.length; i++) {
     listItems[i].classList.remove('selected');
@@ -87,7 +79,6 @@ function showContent(index, element) {
   selectedContent.style.opacity = '1';
   selectedContent.style.display = 'block';
 
-  // Добавляем класс "selected" к выбранному пункту списка
   element.classList.add('selected');
 
   // Закрываем содержимое при клике вне блока

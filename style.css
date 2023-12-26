@@ -550,6 +550,7 @@
   height: 24px;
   width: 24px;
   filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
 }
 
 /* стилизация шестого блока (Принципы) */
