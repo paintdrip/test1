@@ -8,6 +8,10 @@ a {
   text-decoration: none;
 }
 
+.drop-mobile__icon {
+  display: none;
+}
+
 /* Стилизация header'а */
 .header {
   position: sticky;
@@ -1945,5 +1949,16 @@ a {
 
   .menu {
     display: none;
+  }
+
+  img {
+    max-width: 100%;
+  }
+
+  .drop-mobile__icon {
+    display: block;
+    height: 44px;
+    width: 44px;
+    flex-shrink: 0;
   }
 }
