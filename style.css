@@ -1582,11 +1582,27 @@ a {
   /* стилизация верхнего новостного блока */
 
   .news-block {
+    position: relative;
     height: 618px;
+    width: auto;
     margin-bottom: 100px;
+    /* opacity: 0.78; */
+  }
+
+  .news-block::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0.78;
+    /* Другие стили для псевдоэлемента */
   }
 
   .news-block__content {
+    z-index: 999;
     margin-left: 21px;
     width: 727px;
   }
@@ -1921,5 +1937,13 @@ a {
     border-radius: 8px;
     position: relative;
     mix-blend-mode: multiply;
+  }
+
+  .direction {
+    display: none;
+  }
+
+  .menu {
+    display: none;
   }
 }
