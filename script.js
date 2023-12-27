@@ -99,3 +99,25 @@ function showContent(index, element) {
   document.addEventListener('click', handleClickOutside);
   selectedContent.addEventListener('click', handleClickInside);
 }
+
+// МОБИЛЬНАЯ ВЫПАДАЙКА
+const icon = document.querySelector('.drop-mobile__icon');
+const menu = document.querySelector('.drop-mobile');
+
+icon.addEventListener('click', function () {
+  menu.classList.toggle('active');
+  if (menu.classList.contains('active')) {
+    icon.style.backgroundImage = "url('./assets/images/drop-downs/mobile-close.svg')";
+  } else {
+    icon.style.backgroundImage = "url('./assets/images/drop-downs/mobile-drop.svg')";
+  }
+});
+
+document.addEventListener('click', function (event) {
+  if (!menu.contains(event.target) && !icon.contains(event.target)) {
+    menu.classList.remove('active');
+    icon.style.backgroundImage = "url('./assets/images/drop-downs/mobile-drop.svg')";
+  }
+});
+
+// второй уровень вложенности
