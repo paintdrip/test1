@@ -121,3 +121,44 @@ document.addEventListener('click', function (event) {
 });
 
 // второй уровень вложенности
+
+const menuItems = document.querySelectorAll('.drop-mobile-item');
+const contents = document.querySelectorAll('.drop-mobile__content');
+
+let previousTarget = null;
+
+menuItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    const target = item.getAttribute('data-target');
+
+    if (target === previousTarget) {
+      contents.forEach((content) => {
+        content.style.display = 'none';
+      });
+
+      menuItems.forEach((menuItem) => {
+        menuItem.classList.remove('selected');
+        menuItem.style.display = 'block';
+      });
+
+      previousTarget = null;
+    } else {
+      contents.forEach((content) => {
+        if (content.id === `${target}-content`) {
+          content.style.display = 'block';
+        } else {
+          content.style.display = 'none';
+        }
+      });
+
+      menuItems.forEach((menuItem) => {
+        if (menuItem !== item) {
+          menuItem.style.display = 'none';
+        }
+      });
+
+      item.classList.add('selected');
+      previousTarget = target;
+    }
+  });
+});
