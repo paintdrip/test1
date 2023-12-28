@@ -47,7 +47,7 @@ a {
   width: 100%;
   height: 6070px;
   background-color: rgba(0, 32, 96, 0.2);
-  z-index: 9;
+  z-index: 1;
 }
 
 /* Стилизация header'а */
@@ -1685,6 +1685,7 @@ a {
   }
 
   .overlay {
+    top: 98px;
     height: 5350px;
   }
 
