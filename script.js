@@ -47,6 +47,9 @@ forwardButton.addEventListener('click', scrollForward);
 const backButton = document.getElementById('backButton');
 backButton.addEventListener('click', scrollBack);
 
+// фоновый блок затемнения
+const blueOverlay = document.getElementById('blue-overlay');
+
 // появление / скрытие верхнего выпадающего меню
 document.addEventListener('click', function (event) {
   var pageOverlay = document.createElement('div');
@@ -56,7 +59,12 @@ document.addEventListener('click', function (event) {
   if (event.target === menuButton) {
     menu.classList.toggle('open');
     menuButton.classList.toggle('open');
+    blueOverlay.style.display = 'none';
+    if (menu.classList.contains('open')) {
+      blueOverlay.style.display = 'block';
+    }
   } else if (!menu.contains(event.target)) {
+    blueOverlay.style.display = 'none';
     menu.classList.remove('open');
     menuButton.classList.remove('open');
   }
@@ -64,6 +72,13 @@ document.addEventListener('click', function (event) {
 
 // функционал выпадающих меню directions
 function showContent(index, element) {
+  var overlay = document.querySelector('.overlay');
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.classList.add('overlay'); // Добавляем класс для стилизации слоя
+    document.body.appendChild(overlay); // Добавляем слой на страницу
+  }
+
   // Скрываем все содержимое и Удаляем класс "selected" у всех пунктов списка
   var contents = document.getElementsByClassName('direction');
   for (var i = 0; i < contents.length; i++) {
@@ -83,11 +98,17 @@ function showContent(index, element) {
 
   // Закрываем содержимое при клике вне блока
   function handleClickOutside(event) {
-    if (!selectedContent.contains(event.target) && event.target !== element) {
+    if (
+      !selectedContent.contains(event.target) &&
+      event.target !== element &&
+      !event.target.closest('.header__nav__li')
+    ) {
       selectedContent.style.opacity = '0';
       selectedContent.style.display = 'none';
 
       element.classList.remove('selected');
+      overlay.remove(); // Удаляем слой при закрытии содержимого
+      document.removeEventListener('click', handleClickOutside); // Удаляем обработчик события клика вне блока
     }
   }
 
@@ -103,13 +124,22 @@ function showContent(index, element) {
 // МОБИЛЬНАЯ ВЫПАДАЙКА
 const icon = document.querySelector('.drop-mobile__icon');
 const menu = document.querySelector('.drop-mobile');
+let overlay;
 
 icon.addEventListener('click', function () {
+  if (!overlay) {
+    overlay = document.createElement('div');
+    overlay.classList.add('overlay'); // Добавляем класс для стилизации слоя
+    document.body.appendChild(overlay); // Добавляем слой на страницу
+  }
+
   menu.classList.toggle('active');
   if (menu.classList.contains('active')) {
     icon.style.backgroundImage = "url('./assets/images/drop-downs/mobile-close.svg')";
   } else {
     icon.style.backgroundImage = "url('./assets/images/drop-downs/mobile-drop.svg')";
+    document.body.removeChild(overlay); // Удаляем слой при закрытии выпадающей меню
+    overlay = null; // Сбрасываем значение overlay
   }
 });
 
@@ -117,6 +147,8 @@ document.addEventListener('click', function (event) {
   if (!menu.contains(event.target) && !icon.contains(event.target)) {
     menu.classList.remove('active');
     icon.style.backgroundImage = "url('./assets/images/drop-downs/mobile-drop.svg')";
+    document.body.removeChild(overlay); // Удаляем слой при закрытии выпадающей меню
+    overlay = null; // Сбрасываем значение overlay
   }
 });
 
