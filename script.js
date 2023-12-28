@@ -1,5 +1,4 @@
 // Функционал затемнения слайдера
-
 window.onload = () => {
   const options = {
     root: document.querySelector('.articles__container'),
@@ -75,8 +74,8 @@ function showContent(index, element) {
   var overlay = document.querySelector('.overlay');
   if (!overlay) {
     overlay = document.createElement('div');
-    overlay.classList.add('overlay'); // Добавляем класс для стилизации слоя
-    document.body.appendChild(overlay); // Добавляем слой на страницу
+    overlay.classList.add('overlay');
+    document.body.appendChild(overlay);
   }
 
   // Скрываем все содержимое и Удаляем класс "selected" у всех пунктов списка
@@ -107,7 +106,7 @@ function showContent(index, element) {
       selectedContent.style.display = 'none';
 
       element.classList.remove('selected');
-      overlay.remove(); // Удаляем слой при закрытии содержимого
+      overlay.remove(); // Удаляем слой при закрытии
       document.removeEventListener('click', handleClickOutside); // Удаляем обработчик события клика вне блока
     }
   }
@@ -129,8 +128,8 @@ let overlay;
 icon.addEventListener('click', function () {
   if (!overlay) {
     overlay = document.createElement('div');
-    overlay.classList.add('overlay'); // Добавляем класс для стилизации слоя
-    document.body.appendChild(overlay); // Добавляем слой на страницу
+    overlay.classList.add('overlay');
+    document.body.appendChild(overlay);
   }
 
   menu.classList.toggle('active');
@@ -138,7 +137,7 @@ icon.addEventListener('click', function () {
     icon.style.backgroundImage = "url('./assets/images/drop-downs/mobile-close.svg')";
   } else {
     icon.style.backgroundImage = "url('./assets/images/drop-downs/mobile-drop.svg')";
-    document.body.removeChild(overlay); // Удаляем слой при закрытии выпадающей меню
+    document.body.removeChild(overlay); // Удаляем слой при закрытии выпадайки
     overlay = null; // Сбрасываем значение overlay
   }
 });
@@ -147,7 +146,7 @@ document.addEventListener('click', function (event) {
   if (!menu.contains(event.target) && !icon.contains(event.target)) {
     menu.classList.remove('active');
     icon.style.backgroundImage = "url('./assets/images/drop-downs/mobile-drop.svg')";
-    document.body.removeChild(overlay); // Удаляем слой при закрытии выпадающей меню
+    document.body.removeChild(overlay); // Удаляем слой при закрытии выпадайки
     overlay = null; // Сбрасываем значение overlay
   }
 });
