@@ -74,6 +74,10 @@ a {
   transition: 0.2s;
 }
 
+.header__nav__li:hover {
+  color: #ff7e25;
+}
+
 .header__nav__searchIcon {
   background-color: #b0b7c7;
   border-radius: 50%;
@@ -83,6 +87,10 @@ a {
   cursor: pointer;
   transition: 0.2s;
   user-select: none;
+}
+
+.header__nav__searchIcon:hover {
+  background-color: #ff7e25;
 }
 
 /* стилизация верхнего новостного блока */
@@ -173,6 +181,12 @@ a {
   position: relative;
   padding-right: 40px;
   cursor: pointer;
+  transition: 0.15s;
+  opacity: 1;
+}
+
+.arrow-button:hover {
+  opacity: 0.6;
 }
 
 .arrow-button::after {
@@ -344,6 +358,12 @@ a {
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  transition: 0.15s;
+  opacity: 1;
+}
+
+.lr-buttons__btn:hover {
+  opacity: 0.5;
 }
 
 .lr-buttons__btn img {
@@ -509,6 +529,12 @@ a {
   position: relative;
   padding-right: 40px;
   cursor: pointer;
+  transition: 0.15s;
+  opacity: 1;
+}
+
+.orange-button:hover {
+  opacity: 0.5;
 }
 
 .orange-button::after {
@@ -619,6 +645,12 @@ a {
   position: relative;
   padding-right: 40px;
   cursor: pointer;
+  opacity: 1;
+  transition: 0.15s;
+}
+
+.more-blue-button:hover {
+  opacity: 0.5;
 }
 
 .more-blue-button::after {
@@ -691,6 +723,12 @@ a {
   position: relative;
   padding-right: 40px;
   cursor: pointer;
+  opacity: 1;
+  transition: 0.15s;
+}
+
+.more-orange-button:hover {
+  opacity: 0.5;
 }
 
 .more-orange-button::after {
@@ -749,6 +787,11 @@ a {
   margin-bottom: 20px;
   margin-top: 50px;
   cursor: pointer;
+  transition: 0.15s;
+}
+
+.footer__p-main:hover {
+  color: #002060;
 }
 
 .footer__p-subs {
@@ -760,6 +803,11 @@ a {
   margin-bottom: 50px;
   margin-top: 0;
   cursor: pointer;
+  transition: 0.15s;
+}
+
+.footer__p-subs:hover {
+  color: #002060;
 }
 
 .footer__p-desc {
@@ -790,12 +838,18 @@ a {
   height: 48px;
   width: 48px;
   cursor: pointer;
+  transition: 0.15s;
+}
+
+.footer-right__upblock img:hover {
+  transform: scale(1.1);
 }
 
 /* выпадайка поиска */
 
 .menu {
   position: absolute;
+  display: none;
   opacity: 0;
   left: 0;
   width: 100%;
@@ -874,6 +928,7 @@ a {
 
 #search-menu.open {
   opacity: 1;
+  display: block;
 }
 
 #search-menu__button.open {
@@ -1787,7 +1842,7 @@ a {
 
   .double-grid-section {
     height: 353px;
-    width: 352px;
+    width: 100%;
     grid-template-columns: repeat(1, 354px);
     grid-template-rows: repeat(1, 166px);
   }
@@ -2238,11 +2293,12 @@ a {
 
   .section__container {
     flex-direction: column;
+    align-items: center;
   }
 
   .section__container__left-block {
     height: 360px;
-    width: 360px;
+    width: 100%;
   }
 
   .section__container__left-block__img {
@@ -2265,13 +2321,14 @@ a {
 
   .section__container__right-block {
     height: 360px;
-    width: 360px;
-    grid-template-columns: repeat(2, 170px);
+    width: 100%;
+    grid-template-columns: repeat(2, 48%);
     grid-template-rows: repeat(2, 170px);
+    gap: 20px;
   }
 
   .grid-item {
-    width: 170px;
+    width: 100%;
     height: 170px;
   }
 
@@ -2305,7 +2362,7 @@ a {
     margin: 0;
   }
   .articles__container {
-    width: 380px;
+    width: 93vw;
     /* transform: translateX(-290px); */
     margin-top: 0px;
     overflow-x: scroll;
@@ -2323,13 +2380,13 @@ a {
 
   .double-grid-section {
     height: 360px;
-    width: 360px;
-    grid-template-columns: repeat(1, 360px);
+    width: 100%;
+    grid-template-columns: repeat(1, 100%);
     grid-template-rows: repeat(1, 166px);
   }
 
   .grid-double {
-    width: 360px;
+    width: 100%;
     height: 166px;
     text-align: center;
   }
