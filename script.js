@@ -124,6 +124,7 @@ document.addEventListener('click', function (event) {
 
 const menuItems = document.querySelectorAll('.drop-mobile-item');
 const contents = document.querySelectorAll('.drop-mobile__content');
+const blockSearch = document.querySelector('.block-search');
 
 let previousTarget = null;
 
@@ -140,6 +141,8 @@ menuItems.forEach((item) => {
         menuItem.classList.remove('selected');
         menuItem.style.display = 'block';
       });
+
+      blockSearch.style.display = 'block';
 
       previousTarget = null;
     } else {
@@ -158,6 +161,8 @@ menuItems.forEach((item) => {
       });
 
       item.classList.add('selected');
+      blockSearch.style.display = 'none';
+
       previousTarget = target;
     }
   });
