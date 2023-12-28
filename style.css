@@ -1981,6 +1981,7 @@ a {
     background-color: #fff;
     transition: 0.3s;
     z-index: 9999;
+    user-select: none;
   }
 
   .drop-mobile__ul {
@@ -2000,6 +2001,14 @@ a {
     list-style-type: none;
   }
 
+  .content-ul a {
+    color: #27323f;
+  }
+
+  .content-ul a:hover {
+    color: #ff7e25;
+  }
+
   .content-ul__li {
     margin-bottom: 30px;
     color: #27323f;
@@ -2007,6 +2016,8 @@ a {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    cursor: pointer;
+    transition: 0.2s;
   }
 
   .drop-mobile-item {
@@ -2018,23 +2029,35 @@ a {
     cursor: pointer;
     list-style-type: none;
     margin-bottom: 30px;
+    transition: 0.2s;
   }
 
   .drop-mobile-item.selected {
     color: #ff7e25;
     font-size: 20px;
     position: relative;
+    transform: translateX(30px);
   }
 
   .drop-mobile-item.selected::after {
     content: '';
     position: absolute;
-    left: 0;
+    left: -30px;
     bottom: -23px;
-    width: 100%;
+    width: 238px;
     height: 2px;
     background-color: #b0b7c7;
     opacity: 0.2;
+  }
+
+  .drop-mobile-item.selected::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 0px;
+    width: 30px;
+    height: 30px;
+    background-image: url('/assets/images/drop-downs/mobile-arrow.svg');
   }
 
   .drop-mobile-item:hover {
